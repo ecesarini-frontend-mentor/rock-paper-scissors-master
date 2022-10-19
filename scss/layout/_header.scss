@@ -1,3 +1,16 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+#header {
+    @include size(100%, 160px);
+    display: flex;
+}
+
+.header-wrapper {
+    @include size(50%, 100%);
+    @include border(2px, solid, $text-color, 7px);
+    margin: 0 auto;
+    &>* {
+        height: 80%;
+    }
+}

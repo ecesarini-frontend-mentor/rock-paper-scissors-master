@@ -10,9 +10,9 @@ html {
 }
 
 body { 
-  width: $body-width;
-  height: $body-height;
+  @include size($body-width, $body-height);
   background: radial-gradient($gradient-color-background-from, $gradient-color-background-to);
+  margin-top: 50px;
 }
 
 /**
@@ -27,15 +27,17 @@ body {
   box-sizing: inherit;
 }
 
-/**
- * Basic styles for links
- */
 a {
-  //color: $brand-color;
   text-decoration: none;
+}
 
-  @include on-event {
-    //color: $text-color;
-    text-decoration: underline;
-  }
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

@@ -6,3 +6,11 @@ body {
   font-weight: $text-font-weight-semibold;
   //font: normal 125% / 1.4 $text-font-stack;
 }
+
+.card {
+  font-size: 23px;
+  font-weight: $text-font-weight-bold;
+  &>* {
+    text-transform: uppercase;
+  }
+}

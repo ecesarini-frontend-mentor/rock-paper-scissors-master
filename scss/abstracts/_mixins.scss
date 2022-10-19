@@ -34,3 +34,17 @@
   }
 }
 
+
+/// Size handler
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+  
+  @content;
+}
+
+/// Design border
+@mixin border($size, $style, $color, $radius-w: '100%', $radius-h: $radius-w) {
+  border: $size $style $color;
+  border-radius: $radius-w $radius-h;  
+}
