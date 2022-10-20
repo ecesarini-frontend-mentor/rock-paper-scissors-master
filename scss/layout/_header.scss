@@ -8,9 +8,19 @@
 
 .header-wrapper {
     @include size(50%, 100%);
-    @include border(2px, solid, $text-color, 7px);
+    @include border(2px, solid, $header-color-outline, 7px);
     margin: 0 auto;
-    &>* {
-        height: 80%;
-    }
+    padding: 1.8em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-opt.card {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header-score.card {
+    @include border(1px, solid, $text-color, 5px);
+    padding: 1em 2em;
 }

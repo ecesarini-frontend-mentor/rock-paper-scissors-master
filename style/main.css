@@ -321,6 +321,14 @@ body {
   margin-top: 50px;
 }
 
+main {
+  width: 80%;
+  height: 70%;
+  border: 1px solid hsl(0deg, 100%, 100%);
+  border-radius: 0 0;
+  margin: 100px auto;
+}
+
 /**
  * Make all elements from the DOM inherit from the parent box-sizing
  * Since `*` has a specificity of 0, it does not override the `html` value
@@ -361,11 +369,28 @@ body {
 }
 
 .card {
-  font-size: 23px;
   font-weight: 700;
+  line-height: 1em;
 }
 .card > * {
   text-transform: uppercase;
+}
+
+.header-opt {
+  font-size: 2.2rem;
+}
+
+.header-score {
+  line-height: unset;
+  background-color: hsl(0deg, 100%, 100%);
+}
+.header-score > :first-child {
+  font-size: 0.8em;
+  color: hsl(229deg, 64%, 46%);
+}
+.header-score > :last-child {
+  font-size: 3em;
+  color: hsl(229deg, 25%, 31%);
 }
 
 /**
@@ -428,21 +453,36 @@ body {
 .header-wrapper {
   width: 50%;
   height: 100%;
-  border: 2px solid hsl(0deg, 100%, 100%);
+  border: 2px solid hsl(217deg, 16%, 45%);
   border-radius: 7px 7px;
   margin: 0 auto;
+  padding: 1.8em;
+  display: flex;
+  justify-content: space-between;
 }
-.header-wrapper > * {
-  height: 80%;
+
+.header-opt.card {
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.header-score.card {
+  border: 1px solid hsl(0deg, 100%, 100%);
+  border-radius: 5px 5px;
+  padding: 1em 2em;
+}
+
+.main-grid {
+  width: 70%;
+  height: 100%;
+  margin: auto;
 }
 
 .card {
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -36,7 +36,7 @@
 
 
 /// Size handler
-@mixin size($width, $height: $width) {
+@mixin size($width, $height: 100%) {
   width: $width;
   height: $height;
   
@@ -44,7 +44,14 @@
 }
 
 /// Design border
-@mixin border($size, $style, $color, $radius-w: '100%', $radius-h: $radius-w) {
+@mixin border($size, $style, $color, $radius-w: 0, $radius-h: $radius-w) {
   border: $size $style $color;
   border-radius: $radius-w $radius-h;  
+}
+
+// Design card
+@mixin card {
+  display: flex;
+  flex-direction: column;
+  @content;
 }
