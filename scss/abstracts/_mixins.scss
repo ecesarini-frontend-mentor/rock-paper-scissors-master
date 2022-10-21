@@ -35,25 +35,26 @@
 }
 
 /// Tools
-//@mixin lister($args) {
-//  @each $a in $args {
-//    
-//  }
-  
-//}
 
 /// Size handler
 @mixin size($width, $height: 100%) {
   width: $width;
   height: $height;
-  
   @content;
 }
 
 /// Style border
-@mixin border($size, $style: 'solid', $color, $radius-w: 0, $radius-h: $radius-w) {
-  border: $size $style $color;
-  border-radius: $radius-w $radius-h;  
+//@mixin border($size, $style: solid, $color, $radius-w: 0, $radius-h: $radius-w) {
+@mixin border($b-arg, $br-arg) {
+  border: nth($b-arg, 1) nth($b-arg, 2) nth($b-arg, 3);
+  @if $br-arg {
+    $radius-h: nth($br-arg , 1);
+    @if length($br-arg) > 1 {
+      $radius-h: nth($br-arg, 2);
+    }
+    border-radius: nth($br-arg, 1) $radius-h;  
+  }
+  @content;
 }
 
 /// Design card
@@ -64,17 +65,17 @@
 }
 
 /// Design button
-@mixin button($width, $height, $border-color) {
-  @include size($width, $height);
-  @include border(12.5%, $style, $border-color, 50%)
+@mixin button($size, $border-color) {
+  @include size(nth($size, 1) nth($size, 2));
+  @include border(12.5% $style $border-color, 50%)
 
 } 
 
 @mixin button-play($url, $border-color) {
+  @include button(200px 200px);
+  @include border(12.5% solid $border-color, 50%);
   background-image: url($url);
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center;
-  @include size(200px, 200px);
-  @include border(12.5%, solid, $border-color, 50%)
 }

@@ -17,7 +17,7 @@ body {
 
 main {
   @include size(80%, 70%);
-  @include border(1px, solid, $text-color);
+  @include border(1px solid $text-color, 2px);
   margin: 100px auto;
 }
 
