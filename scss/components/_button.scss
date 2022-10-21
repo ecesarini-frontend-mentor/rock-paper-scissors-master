@@ -1,3 +1,13 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+.btn-paper {
+    @include button-play('/images/icon-paper.svg', $gradient-color-paper-from);
+}
+.btn-scissors {
+    @include button-play('/images/icon-scissors.svg', $gradient-color-scissors-from);
+}
+.btn-rock {
+    @include button-play('/images/icon-rock.svg', $gradient-color-rock-from);
+}

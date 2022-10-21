@@ -34,6 +34,13 @@
   }
 }
 
+/// Tools
+//@mixin lister($args) {
+//  @each $a in $args {
+//    
+//  }
+  
+//}
 
 /// Size handler
 @mixin size($width, $height: 100%) {
@@ -43,15 +50,31 @@
   @content;
 }
 
-/// Design border
-@mixin border($size, $style, $color, $radius-w: 0, $radius-h: $radius-w) {
+/// Style border
+@mixin border($size, $style: 'solid', $color, $radius-w: 0, $radius-h: $radius-w) {
   border: $size $style $color;
   border-radius: $radius-w $radius-h;  
 }
 
-// Design card
+/// Design card
 @mixin card {
   display: flex;
   flex-direction: column;
   @content;
+}
+
+/// Design button
+@mixin button($width, $height, $border-color) {
+  @include size($width, $height);
+  @include border(12.5%, $style, $border-color, 50%)
+
+} 
+
+@mixin button-play($url, $border-color) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  @include size(200px, 200px);
+  @include border(12.5%, solid, $border-color, 50%)
 }
