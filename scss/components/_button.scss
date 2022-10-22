@@ -3,11 +3,11 @@
 // -----------------------------------------------------------------------------
 
 .btn-paper {
-    @include button-play('/images/icon-paper.svg', $gradient-color-paper-from);
+    @include button-play('/images/icon-paper.svg', $button-play-shadow-paper $button-play-color-paper);
 }
 .btn-scissors {
-    @include button-play('/images/icon-scissors.svg', $gradient-color-scissors-from);
+    @include button-play('/images/icon-scissors.svg', $button-play-shadow-scissors $button-play-color-scissors);
 }
 .btn-rock {
-    @include button-play('/images/icon-rock.svg', $gradient-color-rock-from);
+    @include button-play('/images/icon-rock.svg', $button-play-shadow-rock $button-play-color-rock);
 }

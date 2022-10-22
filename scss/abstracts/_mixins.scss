@@ -43,8 +43,16 @@
   @content;
 }
 
+// Background image
+@mixin background-img($url, $size: 100%, $args: no-repeat center) {
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: nth($args , 1);
+  background-position: nth($args , 2);  
+  @content;
+}
+
 /// Style border
-//@mixin border($size, $style: solid, $color, $radius-w: 0, $radius-h: $radius-w) {
 @mixin border($b-arg, $br-arg) {
   border: nth($b-arg, 1) nth($b-arg, 2) nth($b-arg, 3);
   @if $br-arg {
@@ -65,17 +73,14 @@
 }
 
 /// Design button
-@mixin button($size, $border-color) {
-  @include size(nth($size, 1) nth($size, 2));
-  @include border(12.5% $style $border-color, 50%)
+@mixin button($size, $border-style, $border-radius) {
+  @include size(nth($size, 1), nth($size, 2));
+  @include border($border-style, $border-radius);
 
 } 
 
 @mixin button-play($url, $border-color) {
-  @include button(200px 200px);
-  @include border(12.5% solid $border-color, 50%);
-  background-image: url($url);
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
+  @include button(200px 200px, 20px solid nth($border-color, 2), 50%);
+  @include background-img($url, 50%);
+  box-shadow: inset 0 $button-play-shadow-size $button-play-shadow-inset, 0 $button-play-shadow-size nth($border-color, 1);
 }
