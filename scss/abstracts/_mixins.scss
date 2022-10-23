@@ -76,11 +76,13 @@
 @mixin button($size, $border-style, $border-radius) {
   @include size(nth($size, 1), nth($size, 2));
   @include border($border-style, $border-radius);
-
+  @content;
 } 
 
 @mixin button-play($url, $border-color) {
-  @include button(200px 200px, 20px solid nth($border-color, 2), 50%);
+  @include button($button-play-size, $button-play-border-size solid nth($border-color, 2), 50%);
   @include background-img($url, 50%);
+  background-color: $text-color;
   box-shadow: inset 0 $button-play-shadow-size $button-play-shadow-inset, 0 $button-play-shadow-size nth($border-color, 1);
+  @content;
 }

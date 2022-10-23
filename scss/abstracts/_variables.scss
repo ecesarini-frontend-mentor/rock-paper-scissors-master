@@ -13,10 +13,16 @@ $breakpoints: (
 // Size
 $body-width: 100%;
 $body-height: 100vh;
+$body-padding: 50px 0 0 0;
 $body-width-children: 50%;
-$main-w: 32%;
-$main-h: 440px;
-//$body-height: 100vh;
+$section-play-height: 55vh;
+$section-play-img-dim: 25em;
+$button-play-size: 200px 200px;
+$button-play-border-size: 20px;
+$button-play-shadow-size: 9px;
+$button-rules-size: 9.2vw 40px;
+$button-rules-margin: 0 2.2vw 0 auto;
+
 
 // Font
 $text-font-family: 'Barlow Semi Condensed', sans-serif;
@@ -31,7 +37,6 @@ $text-color-score: hsl(229, 64%, 46%);
 
 $header-color-outline: hsl(217, 16%, 45%);
 
-$button-play-shadow-size: 9px;
 $button-play-shadow-inset: hsla(0, 0%, 0%, 0.2);
 $button-play-shadow-scissors: hsl(39, 89%, 49%);
 $button-play-color-scissors: hsl(40, 84%, 53%);

@@ -11,20 +11,21 @@ html {
 
 body { 
   @include size($body-width, $body-height);
-  &>* {
-    @include size($body-width-children);
-  } 
+  //&>* {
+  //  @include size($body-width-children, unset);
+  //} 
+  padding: $body-padding;
   background: radial-gradient($gradient-color-background-from, $gradient-color-background-to);
-  margin-top: 50px;
 }
 
 main {
   //@include size($body-width-children, $main-h);
-  //@include size(unset, $main-h);
-  @include border(1px solid $text-color, 2px); //debug
-  margin: 100px auto;
+  //@include border(1px solid $text-color, 2px); //debug
+  margin: 100px 0 0 0;
   .play {
-    @include background-img('/images/bg-triangle.svg', 25em);
+    margin: 0 auto;
+    @include size($body-width-children, $section-play-height);
+    @include background-img('/images/bg-triangle.svg', $section-play-img-dim);
   }
 }
 
@@ -57,4 +58,6 @@ li {
 
 button {
   cursor: pointer;
+  background-color: unset;
+  color: unset;
 }

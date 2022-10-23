@@ -2,12 +2,20 @@
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
 
-.btn-paper {
+.button-paper {
     @include button-play('/images/icon-paper.svg', $button-play-shadow-paper $button-play-color-paper);
 }
-.btn-scissors {
+
+.button-scissors {
     @include button-play('/images/icon-scissors.svg', $button-play-shadow-scissors $button-play-color-scissors);
 }
-.btn-rock {
+
+.button-rock {
     @include button-play('/images/icon-rock.svg', $button-play-shadow-rock $button-play-color-rock);
+}
+
+.button-rules {    
+    @include button($button-rules-size, 2px solid $header-color-outline, 5px);
+    display: block;
+    margin: $button-rules-margin;
 }
