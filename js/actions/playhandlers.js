@@ -17,11 +17,13 @@ export class ActionsPlay {
             } else {
                 gridProp.classList.add('main-play-row-1');
             }
-            //return await this.sectionPlay.append(gridProp);
             sectionPlay.append(gridProp);
         }
+        return sectionPlay;
     }
-
-
-
+    static step1() {
+        let btnActive = document.querySelectorAll(".play button");        
+        debugger;
+    }
 }
+
