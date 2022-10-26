@@ -7,23 +7,33 @@ export class ActionsPlay {
         //this.sectionPlay = document.querySelector(".play");
     }
 
-    static initSectionPlay(playBtns) {
-        let sectionPlay =  document.querySelector(".play");
-        for(let prop in playBtns) {
-            let gridProp = playBtns[prop];
-
-            if(prop === 'rock') {
-                gridProp.classList.add('main-play-row-2');
-            } else {
-                gridProp.classList.add('main-play-row-1');
+    static initSectionPlay(tg) {
+        let sectionPlay = document.querySelector(tg);
+        return (playBtns) => {
+            for(let prop in playBtns) {
+                let gridProp = playBtns[prop];
+                if(prop === 'rock') {
+                    gridProp.classList.add('main-play-row-2');
+                } else {
+                    gridProp.classList.add('main-play-row-1');
+                }
+                sectionPlay.append(gridProp);
             }
-            sectionPlay.append(gridProp);
         }
-        return sectionPlay;
+        //return sectionPlay;            
     }
+    static btnPicker(btnActive) {
+        btnActive.forEach(btn => btn.onclick = () => {
+            alert(` I'm ${btn.classList[0]} button!`);
+        });
+
+    }
+    
     static step1() {
-        let btnActive = document.querySelectorAll(".play button");        
-        debugger;
+        function rand() {
+            return Math.floor(Math.random() * 3) + 1;
+        }
     }
+
 }
 

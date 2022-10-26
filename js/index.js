@@ -2,14 +2,16 @@ import * as buttons from '/js/components/buttons/buttons.js';
 import * as playhandlers from '/js/actions/playhandlers.js';
 
 function initPage() {
-    const buttonsPlay = new buttons.ButtonsPlay().buttonsPlayBuilder();
-    const pai = () => {
-        return playhandlers.ActionsPlay.initSectionPlay(buttonsPlay);
-    };
-    let btnActive = pai();
+    const buttonsPlay = new buttons.ButtonsPlay().buttonsPlayBuilder(),
+        actionsPlayer = playhandlers.ActionsPlay,
+        initSectionPlay = actionsPlayer.initSectionPlay(".play");
+    //let btnActive = initSectionPlay(buttonsPlay);
+    initSectionPlay(buttonsPlay);
     window.addEventListener("DOMContentLoaded", () => {
-        pai();
+        initSectionPlay(buttonsPlay);
     });
+    let btnActive = document.querySelectorAll(".play button");
+    actionsPlayer.btnPicker(btnActive);
 
     //debugger;
 }
