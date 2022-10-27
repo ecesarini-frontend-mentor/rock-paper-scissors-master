@@ -6,25 +6,27 @@ export function initSectionPlay(tg) {
     return (playBtns) => {
         for(let prop in playBtns) {
             let gridProp = playBtns[prop];
-            if(prop === 'rock') {
-                gridProp.classList.add('main-play-row-2');
+            if(prop === "rock") {
+                gridProp.classList.add("main-play-row-2");
             } else {
-                gridProp.classList.add('main-play-row-1');
+                gridProp.classList.add("main-play-row-1");
             }
             sectionPlay.append(gridProp);
         }
     }
 }
     
-export function btnPicker(btnActive) {
-    btnActive.forEach(btn => btn.onclick = () => {
-        alert(` I'm ${btn.classList[0]} button!`);
-    });
-
-}
-
-export function step1() {
+export function randomPick() {
     function rand() {
         return Math.floor(Math.random() * 3) + 1;
     }
 }
+
+export function btnPicker(btnActive) {
+    const youPicked = (e) => {
+        const pkdClass = e.target.classList[0];
+        alert(`You picked ${pkdClass} button!`);
+    }
+    btnActive.forEach(btn => btn.addEventListener("click", youPicked)); 
+}
+

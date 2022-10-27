@@ -5,6 +5,12 @@ export function buttonBuild(btnClass) {
     return btn;
 }
 
+export function buttonLocate(old, newer) {
+    const oldTg = document.querySelector(old),
+        newTg = document.querySelector(newer);
+    oldTg.replaceWith(newTg);
+}
+
 export class ButtonsCluster {
     constructor(initClassList) {
         this.initClassList = initClassList;
@@ -17,4 +23,5 @@ export class ButtonsCluster {
     });
     return playBtn;
     }
+
 }
