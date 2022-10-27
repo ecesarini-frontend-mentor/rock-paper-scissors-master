@@ -1,18 +1,20 @@
-import * as buttons from '/js/components/buttons/buttons.js';
-import * as playhandlers from '/js/actions/playhandlers.js';
+import * as btn from '/js/components/buttons/buttons.js';
+import * as playHandler from '/js/actions/playhandlers.js';
 
 function initPage() {
-    const buttonsPlay = new buttons.ButtonsPlay().buttonsPlayBuilder(),
-        actionsPlayer = playhandlers.ActionsPlay,
-        initSectionPlay = actionsPlayer.initSectionPlay(".play");
-    //let btnActive = initSectionPlay(buttonsPlay);
+    const btnPlayCL = ["paper", "rock", "scissors"];
+
+    const buttonsPlay = new btn.ButtonsCluster(btnPlayCL).forge(),
+        initSectionPlay = playHandler.initSectionPlay(".play");
+
     initSectionPlay(buttonsPlay);
     window.addEventListener("DOMContentLoaded", () => {
         initSectionPlay(buttonsPlay);
     });
-    let btnActive = document.querySelectorAll(".play button");
-    actionsPlayer.btnPicker(btnActive);
 
+    let btnActive = document.querySelectorAll(".play button");
+    playHandler.btnPicker(btnActive);
+    
     //debugger;
 }
 

@@ -1,26 +1,20 @@
-export class BuildButtons {
-    constructor() {        
-    }
-
-    static buildButton(btnClass) {
-        const btn = document.createElement("button");        
-        btn.setAttribute("type", "button");
-        btn.classList.add(`button-${btnClass}`);
-        return btn;
-    }
+export function buttonBuild(btnClass) {
+    const btn = document.createElement("button");        
+    btn.setAttribute("type", "button");
+    btn.classList.add(`button-${btnClass}`);
+    return btn;
 }
 
-export class ButtonsPlay {
-    constructor() {
-        this.initClassList = ["paper", "scissors", "rock"];
-        //this.playButton = {};
+export class ButtonsCluster {
+    constructor(initClassList) {
+        this.initClassList = initClassList;
     }
     
-    buttonsPlayBuilder() {
-        const playBtn = {};
-        this.initClassList.forEach(cl => {
-            playBtn[cl] = BuildButtons.buildButton(cl);
-        });
-        return playBtn;
+    forge() {
+    const playBtn = {};
+    this.initClassList.forEach(cl => {
+        playBtn[cl] = buttonBuild(cl);
+    });
+    return playBtn;
     }
 }
