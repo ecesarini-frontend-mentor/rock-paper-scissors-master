@@ -1,5 +1,7 @@
 //import { ButtonsCluster } from "/js/components/buttons/buttons.js";
 
+const mainTarget = document.querySelector(".main-play");
+const btnPicked = {};
 
 export function initSectionPlay(tg) {
     let sectionPlay = document.querySelector(tg);
@@ -7,9 +9,9 @@ export function initSectionPlay(tg) {
         for(let prop in playBtns) {
             let gridProp = playBtns[prop];
             if(prop === "rock") {
-                gridProp.classList.add("main-play-row-2");
+                gridProp.classList.add("main-play-grid-row-2");
             } else {
-                gridProp.classList.add("main-play-row-1");
+                gridProp.classList.add("main-play-grid-row-1");
             }
             sectionPlay.append(gridProp);
         }
@@ -17,16 +19,26 @@ export function initSectionPlay(tg) {
 }
     
 export function randomPick() {
-    function rand() {
-        return Math.floor(Math.random() * 3) + 1;
-    }
+    return Math.floor(Math.random() * 3);
+}
+
+function step1() {
+    mainTarget.classList.remove("main-play-grid");
+    mainTarget.classList.add("main-play-fb");
+    mainTarget.innerHTML = ("");
+    mainTarget.append(btnPicked['player']);
 }
 
 export function btnPicker(btnActive) {
-    const youPicked = (e) => {
-        const pkdClass = e.target.classList[0];
-        alert(`You picked ${pkdClass} button!`);
+    const picker = (e) => {
+        btnPicked['player'] = e.currentTarget;
+        btnPicked['bot'] = btnActive[randomPick()];
+        setTimeout(step1 , 1000);
+        //debugger;
+        //const pkdClass = e.target.classList[0];
+        //alert(`You picked ${pkdClass} button!`);
+
     }
-    btnActive.forEach(btn => btn.addEventListener("click", youPicked)); 
+    btnActive.forEach(btn => btn.addEventListener("click", picker)); 
 }
 
