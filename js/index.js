@@ -20,14 +20,15 @@ function initPage() {
         btnPlayStep1ClList
         );
     
-    step1();
+    //step1();
 
     window.addEventListener("DOMContentLoaded", () => {
         step1();
     });
+    
 
-    //let btnActive = document.querySelectorAll(".play button");
-    //playHandler.btnPicker(btnActive);
+    let btnActive = document.querySelectorAll(".play button");
+    playHandler.btnPicker(btnActive);
     
     //debugger;
 }
