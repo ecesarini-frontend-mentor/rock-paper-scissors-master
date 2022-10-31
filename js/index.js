@@ -13,22 +13,22 @@ function initPage() {
 
 
     //const step1Buld = new playHandler.BuilPlay(btnPlayStep1Prop, btnPlayStep1ClList).step1();
-    const step1 = () => playHandler.step1(
+    const step1 = () => playHandler.stepper(
         target, 
         ['main-play-container', 'main-play-step1'],
         btnPlayStep1Prop,
         btnPlayStep1ClList
         );
     
-    //step1();
+    step1();
 
     window.addEventListener("DOMContentLoaded", () => {
-        step1();
+        //step1();
     });
     
 
-    let btnActive = document.querySelectorAll(".play button");
-    playHandler.btnPicker(btnActive);
+    //let btnActive = document.querySelectorAll(".play button");
+    //playHandler.btnPicker(btnActive);
     
     //debugger;
 }
