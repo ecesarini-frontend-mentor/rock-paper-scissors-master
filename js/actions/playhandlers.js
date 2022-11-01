@@ -1,11 +1,9 @@
 import { buttonBuild } from "../components/buttons/buttons.js";
 import * as common from "../common/common.js";
 
-const mainTarget = document.querySelector(".main-play");
-//const btnPicked = {};
 
 
-export function currentBtnCluster(prop, clList) {
+export function btnPlayCluster(prop, clList) {
     const currentPlayer = {};    
     prop.forEach((p, ind) => {
         currentPlayer[p] = buttonBuild(clList[ind]);
@@ -13,10 +11,31 @@ export function currentBtnCluster(prop, clList) {
     return currentPlayer;
 }
 
+export function btnPlayContainer(contClList, prop, propClList, callback) {
+    const container = document.createElement('div');
+    container.classList.add(...contClList);
+    const cbc = btnPlayCluster(prop, propClList);
+    for(let p in cbc) {
+        cbc[p].addEventListener("click", callback);
+        container.append(cbc[p]);
+    }
+    return container;
+}
+
+export async function step1Cb(e) {
+
+    alert('hello');
+}
+
+export function playUpdater(tg, container) {
+    tg.append(container);
+}
+
+
 export function stepper(tg, contCL, prop, propClList) {
     const container = document.createElement('div');
     container.classList.add(...contCL);
-    const cbc = currentBtnCluster(prop, propClList);
+    const cbc = btnPlayCluster(prop, propClList);
     for(let p in cbc) {
         cbc[p].addEventListener("click", btnPicker);
         container.append(cbc[p]);
@@ -29,11 +48,11 @@ export function btnPicker(e) {
     const prop = ['player', 'bot'],
         propClist = ['main-play-row2 button-player', 'main-play-row-2 button-bot'];
 
-    const btnActive = currentBtnCluster(prop, propClist);
+    const btnActive = btnPlayCluster(prop, propClist);
 
     btnActive['player'] = e.currentTarget;
     btnActive['bot'] = btnPlay[common.randomPick()];
-    debugger;
+    //debugger;
 }
 
 
@@ -42,7 +61,7 @@ export function step2() {
     const btnActive = document.querySelector(".play button");
     const container = document.createElement('div');
     container.classList.add(...contCL);
-    const cbc = currentBtnCluster(prop, propClList);
+    const cbc = btnPlayCluster(prop, propClList);
     for(let p in cbc) {
         cbc[p].addEventListener("click", btnPicker);
         container.append(cbc[p]);
