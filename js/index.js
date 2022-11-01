@@ -22,9 +22,23 @@ function initPage() {
         ['main-play-container', 'main-play-step1'],
         step1Obj.btnProp,
         step1Obj.btnClass,
-        playHandler.step1Cb
+        playHandler.step1
     );
+    const step2Obj = new StepObj(
+        ["player", "bot"],
+        ['main-play-row2 button-player', 'main-play-row-2 button-bot']
+    );
+    const step2cont = playHandler.btnPlayContainer(
+        ['main-play-container', 'main-play-step2'],
+        step2Obj.btnProp,
+        step2Obj.btnClass,
+        playHandler.step1
+    );
+
     playHandler.playUpdater(target, step1cont);
+
+    //const plBtn = document.querySelectorAll('.play button');
+    //plBtn.forEach(pb => alert(pb.classList));
 
 
     //const step1Buld = new playHandler.BuilPlay(btnPlayStep1Prop, btnPlayStep1ClList).step1();
