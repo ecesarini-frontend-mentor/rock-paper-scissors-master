@@ -1,5 +1,4 @@
 import { buttonBuild } from "../components/buttons/buttons.js";
-import * as common from "../common/common.js";
 
 export function btnPlayCluster(prop, clList) {
   const currentPlayer = {};
@@ -9,55 +8,28 @@ export function btnPlayCluster(prop, clList) {
   return currentPlayer;
 }
 
-export function playUpdater(tg, container) {
-  tg.append(container);
-}
-
-export function clickCallBack(obj, callback, cbArg) {
-  for (let prop in obj) {
-    obj[prop].addEventListener("click", () => callback(...cbArg));
-  }
-}
-
-export function btnPlayContainer(
-  contClList,
-  prop,
-  propClList,
-  callback,
-  cbArg
-) {
-  const container = document.createElement("div");
+export function btnPlayContainer(contClList, prop, propClList) {
+  const container = document.createElement("div"),
+    cbc = btnPlayCluster(prop, propClList);
   container.classList.add(...contClList);
-  const cbc = btnPlayCluster(prop, propClList);
-  clickCallBack(cbc, callback, cbArg);
   for (let p in cbc) {
     container.append(cbc[p]);
   }
   return container;
 }
 
-/*export function step1(e) {
-    const pkdCluster = btnPlayCluster(
-        ['player', 'bot'],
-        ['main-play-row2 button-player', 'main-play-row-2 button-bot'],
-    );
-    btnPlayContainer(
-        ['main-play-container', 'main-play-step2'],
-        e.currentTarget, document.querySelectorAll(".play button")[common.randomPick()]],
-        pkdCluster,
-        ['main-play-row2 button-player', 'main-play-row-2 button-bot'],
-    )
-
+function callbackInit(btn, callback, cbArg) {
+  btn.forEach((b) => b.addEventListener("click", () => callback(...cbArg)));
 }
 
-export function btnPicker(e) {
-    const btnPlay = document.querySelectorAll(".play button");
-    const prop = ['player', 'bot'],
-        propClist = ['main-play-row2 button-player', 'main-play-row-2 button-bot'];
+export function playUpdater(tg, container, cbObj) {
+  const btn = container.querySelectorAll("button");
+  callbackInit(btn, cbObj.func, cbObj.arg);
+  tg.append(container);
+}
 
-    const btnActive = btnPlayCluster(prop, propClist);
-
-    btnActive['player'] = e.currentTarget;
-    btnActive['bot'] = btnPlay[common.randomPick()];
-    //debugger;
-}*/
+// export function clickCallBack(obj, callback, cbArg) {
+//   for (let prop in obj) {
+//     obj[prop].addEventListener("click", () => callback(...cbArg));
+//   }
+// }
