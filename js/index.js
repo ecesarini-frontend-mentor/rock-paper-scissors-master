@@ -22,15 +22,21 @@ function initPage() {
       ["main-play-row2 button-player", "main-play-row-2 button-bot"]
     ),
     step2ContainerClass = ["main-play-container", "main-play-step2"];
-  function callbackStep1(e) {
-    let btnTempObj = playHandler.btnPlayObj()
-    currentPlayBtn = playHandler.btnPlayObj(btnPlayTmp);
-    playHandler.containerObj(target, step2ContainerClass, currentPlayBtn);
-  }
-  currentPlayBtn = playHandler.btnPlayObj(step1Map);
 
+  currentPlayBtn = playHandler.btnPlayObj(step1Map);
   playHandler.callbackAttacher(currentPlayBtn, callbackStep1);
-  playHandler.containerObj(target, step1ContainerClass, currentPlayBtn);
+  target.append(playHandler.containerObj(step1ContainerClass, currentPlayBtn));
+  
+  function callbackStep1(e) {
+    const ect = e.currentTarget;
+    currentPlayBtn = common.btnPlayPicker(ect, currentPlayBtn, step2ContainerClass);
+    const currentContainer = playHandler.containerObj(step2ContainerClass, currentPlayBtn);
+    debugger;
+    //   let btnTempObj = playHandler.btnPlayObj()
+    //   currentPlayBtn = playHandler.btnPlayObj(btnPlayTmp);
+    //playHandler.containerObj(target, step2ContainerClass, currentPlayBtn);
+    //target.firstElementChild.replaceWith(playHandler.containerObj(step2ContainerClass, currentPlayBtn));
+  }
 }
 
 initPage();
