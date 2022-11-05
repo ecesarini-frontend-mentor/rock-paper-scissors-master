@@ -1,12 +1,14 @@
 import * as common from "/js/common/common.js";
 import * as playHandler from "/js/actions/playhandlers.js";
+// import * as btn from "/js/components/buttons/buttons.js";
+// import { containerObj } from "./actions/playhandlers";
 //import { Listener } from "./common/common";
 
 function initPage() {
   const target = document.querySelector(".play");
-  let playObj;
+  let currentPlayBtn;
 
-  const step1Obj = new common.StepObj(
+  const step1Map = common.objMapper(
       ["paper", "rock", "scissors"],
       [
         "main-play-row-1 button-paper",
@@ -14,34 +16,21 @@ function initPage() {
         "main-play-row-2 button-rock",
       ]
     ),
-    step2Obj = new common.StepObj(
+    step1ContainerClass = ["main-play-container", "main-play-step1"],
+    step2Map = common.objMapper(
       ["player", "bot"],
       ["main-play-row2 button-player", "main-play-row-2 button-bot"]
-    );
-
-  playObj = playHandler.btnPlayContainer(
-      ["main-play-container", "main-play-step1"],
-      step1Obj.btnProp,
-      step1Obj.btnClass
-    );
-    // step2cont = playHandler.btnPlayContainer(
-    //   ["main-play-container", "main-play-step2"],
-    //   step2Obj.btnProp,
-    //   step2Obj.btnClass
-    // );
-  
-  const listener1 = new common.Listener(
-    (a) => alert(a),
-    ['ciao']
-  );
-
-  //playHandler.playUpdater(target, step1cont, (a) => alert(a), ["ciao"]);
-  playHandler.playUpdater(target, step1cont, listener1);
-
-  function step1Action(a) {
-    //const btnPlay = document.querySelectorAll(".play button");
-    //playHandler.btnPlayContainer(step2cont);
+    ),
+    step2ContainerClass = ["main-play-container", "main-play-step2"];
+  function callbackStep1(e) {
+    let btnTempObj = playHandler.btnPlayObj()
+    currentPlayBtn = playHandler.btnPlayObj(btnPlayTmp);
+    playHandler.containerObj(target, step2ContainerClass, currentPlayBtn);
   }
+  currentPlayBtn = playHandler.btnPlayObj(step1Map);
+
+  playHandler.callbackAttacher(currentPlayBtn, callbackStep1);
+  playHandler.containerObj(target, step1ContainerClass, currentPlayBtn);
 }
 
 initPage();
