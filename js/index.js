@@ -11,27 +11,47 @@ function initPage() {
   const step1Map = common.objMapper(
       ["paper", "rock", "scissors"],
       [
-        "main-play-row-1 button-paper",
-        "main-play-row-1 button-scissors",
-        "main-play-row-2 button-rock",
+        "main-play-row1 button-paper",
+        "main-play-row1 button-scissors",
+        "main-play-row2 button-rock",
       ]
     ),
     step1ContainerClass = ["main-play-container", "main-play-step1"],
-    step2Map = common.objMapper(
-      ["player", "bot"],
-      ["main-play-row2 button-player", "main-play-row-2 button-bot"]
-    ),
+    // step2Map = common.objMapper(
+    //   ["player", "bot"],
+    //   ["main-play-row2 button-player", "main-play-row2 button-bot"]
+    // ),
     step2ContainerClass = ["main-play-container", "main-play-step2"];
 
   currentPlayBtn = playHandler.btnPlayObj(step1Map);
   playHandler.callbackAttacher(currentPlayBtn, callbackStep1);
   target.append(playHandler.containerObj(step1ContainerClass, currentPlayBtn));
-  
+
   function callbackStep1(e) {
+    let step2Map = [
+      ["player", "bot"],
+      ["button-player", "button-bot"]
+    ];
     const ect = e.currentTarget;
-    currentPlayBtn = common.btnPlayPicker(ect, currentPlayBtn, step2ContainerClass);
-    const currentContainer = playHandler.containerObj(step2ContainerClass, currentPlayBtn);
+    step2Map = common.btnPlayPicker(
+      ect,
+      currentPlayBtn,
+      step2Map
+    );
+    step2Map = common.objMapper(...step2Map);
     debugger;
+    currentPlayBtn = playHandler.btnPlayObj(step2Map);
+    target.append(playHandler.containerObj(step2ContainerClass, currentPlayBtn));
+    
+
+
+    //debugger;
+
+    // const currentContainer = playHandler.containerObj(
+    //   step2ContainerClass,
+    //   currentPlayBtn
+    // );
+    //debugger;
     //   let btnTempObj = playHandler.btnPlayObj()
     //   currentPlayBtn = playHandler.btnPlayObj(btnPlayTmp);
     //playHandler.containerObj(target, step2ContainerClass, currentPlayBtn);
