@@ -488,8 +488,6 @@ body {
   height: 100%;
   margin: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: flex-start;
 }
@@ -499,6 +497,8 @@ body {
   background-size: 25em;
   background-repeat: no-repeat;
   background-position: center;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
 }
 .main-play-step1 .main-play-row1 {
   grid-row: 1/2;
@@ -511,10 +511,17 @@ body {
 .main-play-step2 {
   grid-template-rows: 0.3fr 1fr;
 }
-.main-play-step2 .main-play-row1,
-.main-play-step2 .main-play-row2 {
+.main-play-step2 .main-play-row1 {
   grid-row: 1/2;
+}
+.main-play-step2 .main-play-row2 {
+  grid-row: 2/3;
+}
+.main-play-step2 .main-play-row2.button-player {
   grid-column: 1/2;
+}
+.main-play-step2 .main-play-row2.button-bot {
+  grid-column: 2/3;
 }
 
 .button-paper {

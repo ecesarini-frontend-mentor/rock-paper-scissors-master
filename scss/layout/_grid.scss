@@ -2,14 +2,14 @@
   @include size(100%);
   margin: auto;
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
   justify-items: center;
   align-items: flex-start;
 }
 
 .main-play-step1 {
   @include background-img("/images/bg-triangle.svg", $section-play-img-dim);
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   .main-play-row1 {
     grid-row: 1 / 2;
   }
@@ -21,9 +21,16 @@
 
 .main-play-step2 {
   grid-template-rows: 0.3fr 1fr;
-  .main-play-row1,
-  .main-play-row2 {
+  .main-play-row1 {
     grid-row: 1 / 2;
-    grid-column: 1 / 2;
+  }
+  .main-play-row2 {
+    grid-row: 2 / 3;
+    &.button-player {
+      grid-column: 1 / 2;
+    }
+    &.button-bot {
+      grid-column: 2 / 3;
+    }
   }
 }

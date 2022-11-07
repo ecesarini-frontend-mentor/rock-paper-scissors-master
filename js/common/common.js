@@ -11,15 +11,15 @@ export function objMapper(prop, value) {
   }
 }
 
-export function randomPick() {
-  return Math.floor(Math.random() * 3);
+export function randomPick(num) {
+  return Math.floor(Math.random() * num);
 }
 
+
 export function btnPlayPicker(ect, obj, clArr) {
-  //const pick = {};
   const picked = [
     Object.keys(obj).find((key) => obj[key] === ect),
-    Object.keys(obj)[randomPick()],
+    Object.keys(obj)[randomPick(3)],
   ];
   clArr[1] = clArr[1].map((item, ind) => //map returns something
     item += ` main-play-row2 button-${picked[ind]}`

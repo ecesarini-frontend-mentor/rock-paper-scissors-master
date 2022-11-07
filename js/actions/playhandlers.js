@@ -1,4 +1,4 @@
-import { buttonBuild } from "/js/components/buttons/buttons.js";
+import { buttonBuild } from "/js/components/buttons.js";
 // import * as common from "/js/common/common.js";
 
 export function btnPlayObj(obj) {
