@@ -4,7 +4,7 @@ export function objMapper(prop, value) {
   }
   try {
     const obj = {};
-    prop.forEach((elem, ind) => (obj[elem] = value[ind]));
+    prop.forEach((elem, ind) => obj[elem] = value[ind]);
     return obj;
   } catch (e) {
     console.log(e);

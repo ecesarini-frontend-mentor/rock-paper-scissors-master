@@ -1,6 +1,16 @@
 import { buttonBuild } from "/js/components/buttons.js";
 // import * as common from "/js/common/common.js";
 
+// export function populateMyTarget(a) {
+//   let target;
+//   a.forEach(ae => {
+    
+//   });
+
+
+// }
+
+
 export function btnPlayObj(obj) {
   const btnObj = {};
   for(let prop in obj) {
