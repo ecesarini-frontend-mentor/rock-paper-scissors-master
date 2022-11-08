@@ -1,14 +1,34 @@
 import { buttonBuild } from "/js/components/buttons.js";
-// import * as common from "/js/common/common.js";
+import * as common from "/js/common/common.js";
 
-// export function populateMyTarget(a) {
-//   let target;
-//   a.forEach(ae => {
-    
-//   });
+export class BtnPlay {
+  constructor(initClass) {
+    this.initClass = initClass;
+    this.btnCurrentList = {
+      paper: undefined,
+      scissors: undefined,
+      rock: undefined
+    };
+  }
 
+  get init() {
+    this.initClass.forEach((elem, index) => { //don't use "map" because returns an array
+      this.btnCurrentList[Object.keys(this.btnCurrentList)[index]] = buttonBuild(elem);
+    });
+    return this.btnCurrentList;
+  }
+}
 
-// }
+export function btnContainerRefresh(tg, tgClass, obj) {
+  tg.innerHtml = "";
+  const container = document.createElement("div");
+  container.classList.add(...tgClass);
+  for(let p in obj) {
+    container.append(obj[p]);
+  }
+  tg.append(container);
+}
+
 
 
 export function btnPlayObj(obj) {
@@ -30,8 +50,3 @@ export function containerObj(contCl, obj) {
 }
 
 
-export function callbackAttacher(obj, callback) {
-  for(let prop in obj) {
-    obj[prop].addEventListener("click", callback);
-  }
-}

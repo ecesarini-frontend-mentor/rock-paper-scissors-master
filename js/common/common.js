@@ -11,10 +11,11 @@ export function objMapper(prop, value) {
   }
 }
 
+
+
 export function randomPick(num) {
   return Math.floor(Math.random() * num);
 }
-
 
 export function btnPlayPicker(ect, obj, clArr) {
   const picked = [
@@ -25,4 +26,10 @@ export function btnPlayPicker(ect, obj, clArr) {
     item += ` main-play-row2 button-${picked[ind]}`
   );
   return clArr;
+}
+
+export function callbackAttacher(obj, callback) {
+  for(let prop in obj) {
+    obj[prop].addEventListener("click", callback);
+  }
 }
