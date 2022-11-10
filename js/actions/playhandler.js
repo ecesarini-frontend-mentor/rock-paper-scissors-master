@@ -1,4 +1,4 @@
-import { buttonBuild } from "/js/components/buttons.js";
+import { buttonBuild } from "/js/components/button.js";
 import * as common from "/js/common/common.js";
 
 export class BtnPlay {
@@ -28,30 +28,32 @@ export class BtnPlay {
   }
 }
 
-export function btnContainerRefresh(tg, tgClass, obj) {
-  tg.innerHtml = "";
+export function btnContainerRefresh(tg, tgClass, obj, init = false) {
+  while(tg.firstChild) tg.removeChild(tg.firstChild); //check https://coderwall.com/p/nygghw/don-t-use-innerhtml-to-empty-dom-elements 
   const container = document.createElement("div");
   container.classList.add(...tgClass);
   for (let p in obj) {
     container.append(obj[p]);
   }
-  tg.append(container);
+  if(init) { 
+    tg.append(container) 
+  };
 }
 
-export function btnPlayObj(obj) {
-  const btnObj = {};
-  for (let prop in obj) {
-    btnObj[prop] = buttonBuild(obj[prop]);
-  }
-  return btnObj;
-}
+// export function btnPlayObj(obj) {
+//   const btnObj = {};
+//   for (let prop in obj) {
+//     btnObj[prop] = buttonBuild(obj[prop]);
+//   }
+//   return btnObj;
+// }
 
-export function containerObj(contCl, obj) {
-  const container = document.createElement("div");
-  container.classList.add(...contCl);
-  for (let prop in obj) {
-    container.append(obj[prop]);
-  }
-  return container;
-  //tg.append(container);
-}
+// export function containerObj(contCl, obj) {
+//   const container = document.createElement("div");
+//   container.classList.add(...contCl);
+//   for (let prop in obj) {
+//     container.append(obj[prop]);
+//   }
+//   return container;
+//   //tg.append(container);
+// }

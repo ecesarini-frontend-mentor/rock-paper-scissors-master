@@ -1,6 +1,4 @@
 .card {
-    //@include size(100%);
-    //@extend %card;
     @include card;
     align-items: center;
     justify-content: space-between;    
