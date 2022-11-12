@@ -1,39 +1,53 @@
 import * as common from "/js/common/common.js";
 import * as playHandler from "/js/actions/playhandler.js";
 import * as card from "/js/components/card.js";
-import * as constant from "/js/common/constant.js";
+import * as c from "/js/common/constant.js";
 
 let target = document.querySelector(".play");
-//let currentPlayBtn = playBtn1.init;
-//let currentPlayBtn;
 
-
-export function cbHandler(e) {
-    cbst1(e.currentTarget).then(r => r);
+export function cbHandler(ect, cpb) {
+  step1(ect, cpb)
+    .then(r => r);
+    // .then(r => r);
 }
 
-function cbst1(ect) {
-  const promise1 = new Promise((resolve, reject) => {
-      const step2InitClass = common.playPicker(ect, constant.currentPlayBtn, "main-play-row2"),
-        step2ContainerClass = ["main-play-container", "main-play-step2"],
-        // playBtn2 = new playHandler.BtnPlay(setp2InitProp, step2InitClass, () => alert("ciao"));
+function step1(ect, cpb) {
+  // debugger;
+    const step2InitClass = common.playPicker(ect, cpb, "main-play-row2"),
+        //playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, () => alert("ciao"));
         // playBtn2 = new playHandler.BtnPlay(setp2InitProp, step2InitClass);// cbst2);
-        currentPlayBtn = playBtn2.init;
+        playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cbp) => step2(cbp));
 
-      playPickedCard.player = card.cardAdder(
+    cpb = playBtn2.init;
+
+    c.playPickedCard.player = card.cardAdder(
         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
-        currentPlayBtn.player
+        cpb.player
         );
-      playPickedCard.bot = card.cardAdder(
-        common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
-        currentPlayBtn.bot
-        );
+    // c.playPickedCard.bot = card.cardAdder(
+    //     common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
+    //     cpb.bot
+    //     );
     
       // debugger;
       // playHandler.btnContainerRefresh(target, step2ContainerClass, currentPlayBtn, true);
-      playHandler.btnContainerRefresh(target, step2ContainerClass, playPickedCard, true);
+  const promise = new Promise((resolve, reject) => {
+      playHandler.btnContainerRefresh(c.target, c.step2ContainerClass, c.playPickedCard, true);
     resolve();
   })
-  return promise1;
+  return promise;
+}
 
+function step2(cbp) {
+  c.playPickedCard.bot = card.cardAdder(
+      common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
+      cpb.bot
+      );
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      playHandler.btnContainerRefresh(c.target, c.step2ContainerClass, c.playPickedCard);
+    }, '2000');
+    resolve();
+  });
+  return promise;
 }

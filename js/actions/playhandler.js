@@ -17,7 +17,7 @@ export class BtnPlay {
     for (let prop in this.btnCurrentList) {
       this.btnCurrentList[prop].addEventListener("click", this);
     }
-    this.btnCurrentList;
+    //this.btnCurrentList;
     return this.btnCurrentList;
   }
 
