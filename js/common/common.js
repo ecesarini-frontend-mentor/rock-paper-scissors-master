@@ -1,16 +1,3 @@
-// export function objMapper(prop, value) {
-//   if (prop.length !== value.length) {
-//     throw new Error("Input value lengths mismatch");
-//   }
-//   try {
-//     const obj = {};
-//     prop.forEach((elem, ind) => (obj[elem] = value[ind]));
-//     return obj;
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
-
 export function elementCreator(ty, con, clArr = false) {
   const elem = document.createElement(ty);
   if(clArr && Array.isArray(clArr)) elem.classList.add(...clArr);
