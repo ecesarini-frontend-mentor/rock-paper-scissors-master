@@ -11,9 +11,11 @@ export class BtnPlay {
   }
 
   get init() {
-    this.initProp.forEach(p => this.btnCurrentList[p] = undefined);
-    this.initClass.forEach((elem, index) => { //don't use "map" because returns an array
-      this.btnCurrentList[Object.keys(this.btnCurrentList)[index]] = buttonBuild(elem);
+    this.initProp.forEach((p) => (this.btnCurrentList[p] = undefined));
+    this.initClass.forEach((elem, index) => {
+      //don't use "map" because returns an array
+      this.btnCurrentList[Object.keys(this.btnCurrentList)[index]] =
+        buttonBuild(elem);
     });
     for (let prop in this.btnCurrentList) {
       this.btnCurrentList[prop].addEventListener("click", this);
@@ -29,8 +31,8 @@ export class BtnPlay {
 }
 
 export function btnContainerFlush(tg, tgClass) {
-  while(tg.firstChild) tg.removeChild(tg.firstChild); //check https://coderwall.com/p/nygghw/don-t-use-innerhtml-to-empty-dom-elements 
-  if(tgClass) {
+  while (tg.firstChild) tg.removeChild(tg.firstChild); //check https://coderwall.com/p/nygghw/don-t-use-innerhtml-to-empty-dom-elements
+  if (tgClass) {
     const container = document.createElement("div");
     container.classList.add(...tgClass);
     return container;
@@ -42,40 +44,40 @@ export function btnContainerRefresh(tg, tgClass, obj, init = false) {
   for (let p in obj) {
     container.append(obj[p]);
   }
-  if(init) { 
-    tg.append(container) 
-  };
+  if (init) {
+    tg.append(container);
+  }
 }
 
 export function btnContainerUpdater(tg, tgClass, obj) {
-  const container = btnContainerFlush(tg, tgClass);
+  const container = btnContainerFlush(tg, tgClass),
+    btnRm = obj.bot.querySelector("button"),
+    remover = () => {btnRm.classList.remove(c.btnShadowHouse)};
+    // skipper = () => {if(window.onclick) return true};
+
   for (let p in obj) {
     container.append(obj[p]);
   }
-  timeAction(2000, obj.bot, c.btnShadowHouse);
+  //const ta = timeAction(1000, obj.bot.querySelector("button"), c.btnShadowHouse);
+  
+  const ta = setTimeout(remover, c.btnShadowFadeTime);
+  // window.addEventListener("click", () => {
+  //   clearTimeout(ta);
+  //   remover();
+  // });
+  // if(skipper()) {
+  //   clearTimeout(ta);
+  //   remover();
+  // }
+
   //debugger;
+  tg.append(container);
 }
 
-export function timeAction(delay, elem, sel) {
-  setTimeout(()=> {
-    elem.classList.remove(sel); 
-  }, delay);
-}
+// export function timeAction(delay, elem, sel) {
+//   const remover = () => {
+//     elem.classList.remove(sel);
+//   };
 
-// export function btnPlayObj(obj) {
-//   const btnObj = {};
-//   for (let prop in obj) {
-//     btnObj[prop] = buttonBuild(obj[prop]);
-//   }
-//   return btnObj;
-// }
-
-// export function containerObj(contCl, obj) {
-//   const container = document.createElement("div");
-//   container.classList.add(...contCl);
-//   for (let prop in obj) {
-//     container.append(obj[prop]);
-//   }
-//   return container;
-//   //tg.append(container);
+//   return setTimeout(remover, delay);
 // }

@@ -15,7 +15,8 @@ export const step1InitProp = ["paper", "scissors", "rock"],
     bot: undefined
   },
   
-  btnShadowHouse = "btn-shadow-house";
+  btnShadowHouse = "btn-shadow-house",
+  btnShadowFadeTime = 1500;
 
 
 export let target = document.querySelector(".play");
