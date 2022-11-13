@@ -13,7 +13,9 @@ export const step1InitProp = ["paper", "scissors", "rock"],
   playPickedCard = {
     player: undefined, 
     bot: undefined
-  };
+  },
+  
+  btnShadowHouse = "btn-shadow-house";
 
 
 export let target = document.querySelector(".play");

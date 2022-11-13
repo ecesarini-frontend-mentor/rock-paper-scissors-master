@@ -12,27 +12,24 @@ export function cbHandler(ect, cpb) {
 }
 
 function step1(ect, cpb) {
-  // debugger;
     const step2InitClass = common.playPicker(ect, cpb, "main-play-row2"),
-        //playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, () => alert("ciao"));
-        // playBtn2 = new playHandler.BtnPlay(setp2InitProp, step2InitClass);// cbst2);
-        playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cbp) => step2(cbp));
+      playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cpb) => step2(cpb));
 
     cpb = playBtn2.init;
+    cpb.bot.classList.add(c.btnShadowHouse);
 
     c.playPickedCard.player = card.cardAdder(
         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
         cpb.player
         );
-    // c.playPickedCard.bot = card.cardAdder(
-    //     common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
-    //     cpb.bot
-    //     );
-    
-      // debugger;
-      // playHandler.btnContainerRefresh(target, step2ContainerClass, currentPlayBtn, true);
+    c.playPickedCard.bot = card.cardAdder(
+        common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
+        cpb.bot
+        );
+    // c.playPickedCard.bot.classList.toggle("btn-shadow-house");
+
   const promise = new Promise((resolve, reject) => {
-      playHandler.btnContainerRefresh(c.target, c.step2ContainerClass, c.playPickedCard, true);
+      playHandler.btnContainerUpdater(c.target, c.step2ContainerClass, c.playPickedCard, true);
     resolve();
   })
   return promise;

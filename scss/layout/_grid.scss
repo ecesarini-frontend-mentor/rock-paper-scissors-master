@@ -19,23 +19,6 @@
   }
 }
 
-// .main-play-step2 {
-//   grid-template-rows: 0.3fr 1fr;
-//   .main-play-row1 {
-//     grid-row: 1 / 2;
-//   }
-//   .main-play-row2 {
-//     grid-row: 2 / 3;
-//     &.button-player {
-//       grid-column: 1 / 2;
-//     }
-//     &.button-bot {
-//       grid-column: 2 / 3;
-//     }
-//   }
-// }
-
-
 .main-play-step2 {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;

@@ -1,4 +1,5 @@
 import { buttonBuild } from "/js/components/button.js";
+import * as c from "../common/constant.js";
 import * as common from "/js/common/common.js";
 
 export class BtnPlay {
@@ -17,7 +18,6 @@ export class BtnPlay {
     for (let prop in this.btnCurrentList) {
       this.btnCurrentList[prop].addEventListener("click", this);
     }
-    //this.btnCurrentList;
     return this.btnCurrentList;
   }
 
@@ -28,16 +28,38 @@ export class BtnPlay {
   }
 }
 
-export function btnContainerRefresh(tg, tgClass, obj, init = false) {
+export function btnContainerFlush(tg, tgClass) {
   while(tg.firstChild) tg.removeChild(tg.firstChild); //check https://coderwall.com/p/nygghw/don-t-use-innerhtml-to-empty-dom-elements 
-  const container = document.createElement("div");
-  container.classList.add(...tgClass);
+  if(tgClass) {
+    const container = document.createElement("div");
+    container.classList.add(...tgClass);
+    return container;
+  }
+}
+
+export function btnContainerRefresh(tg, tgClass, obj, init = false) {
+  const container = btnContainerFlush(tg, tgClass);
   for (let p in obj) {
     container.append(obj[p]);
   }
   if(init) { 
     tg.append(container) 
   };
+}
+
+export function btnContainerUpdater(tg, tgClass, obj) {
+  const container = btnContainerFlush(tg, tgClass);
+  for (let p in obj) {
+    container.append(obj[p]);
+  }
+  timeAction(2000, obj.bot, c.btnShadowHouse);
+  //debugger;
+}
+
+export function timeAction(delay, elem, sel) {
+  setTimeout(()=> {
+    elem.classList.remove(sel); 
+  }, delay);
 }
 
 // export function btnPlayObj(obj) {

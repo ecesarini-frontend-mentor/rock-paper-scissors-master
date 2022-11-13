@@ -19,3 +19,10 @@
     display: block;
     margin: $button-rules-margin;
 }
+
+button.btn-shadow-house {
+    background-color: $button-play-shadow-inset;
+    background-image: unset;
+    border: none;
+    box-shadow: none;
+}
