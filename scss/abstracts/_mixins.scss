@@ -86,3 +86,15 @@
   box-shadow: inset 0 $button-play-shadow-size $button-play-shadow-inset, 0 $button-play-shadow-size nth($border-color, 1);
   @content;
 }
+
+/// Animation
+@mixin keyframes($name) {
+  //@debug #{$name};
+  @keyframes #{$name} {
+      @content;
+    }
+}
+
+@mixin animate($animation, $duration, $method, $iter) {
+  animation: $animation $duration $method $iter; //watch out for commas;
+}

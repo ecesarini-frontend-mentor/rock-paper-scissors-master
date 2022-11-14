@@ -533,6 +533,33 @@ body {
   grid-column: 2/3;
 }
 
+.main-play-animation {
+  animation: wiggle 0.2s ease-in-out 1;
+}
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
 .button-paper {
   width: 200px;
   height: 200px;
@@ -581,12 +608,14 @@ body {
   margin: 0 2.2vw 0 auto;
 }
 
-button.btn-shadow-house {
+button.btn-bot-shadow {
   background-color: hsla(0deg, 0%, 0%, 0.2);
   background-image: unset;
   border: none;
   box-shadow: none;
 }
+
+@keyframes pickerRotation {}
 
 .card {
   display: flex;

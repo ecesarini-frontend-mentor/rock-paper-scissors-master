@@ -52,7 +52,7 @@ export function btnContainerRefresh(tg, tgClass, obj, init = false) {
 export function btnContainerUpdater(tg, tgClass, obj) {
   const container = btnContainerFlush(tg, tgClass),
     btnRm = obj.bot.querySelector("button"),
-    remover = () => {btnRm.classList.remove(c.btnShadowHouse)};
+    remover = () => {btnRm.classList.remove(c.btnClassBotPicker)};
     // skipper = () => {if(window.onclick) return true};
 
   for (let p in obj) {

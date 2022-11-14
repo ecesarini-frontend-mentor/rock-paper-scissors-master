@@ -20,9 +20,15 @@
     margin: $button-rules-margin;
 }
 
-button.btn-shadow-house {
+button.btn-bot-shadow {
     background-color: $button-play-shadow-inset;
     background-image: unset;
     border: none;
     box-shadow: none;
+}
+
+button[picker="player"] {
+    @include keyframes(pickerRotation) {
+        
+    }
 }

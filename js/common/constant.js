@@ -7,7 +7,7 @@ export const step1InitProp = ["paper", "scissors", "rock"],
     "main-play-row2 button-rock"
   ],
   step1ContainerClass = ["main-play-container", "main-play-step1"],
-  step2ContainerClass = ["main-play-container", "main-play-step2"],
+  step2ContainerClass = ["main-play-container", "main-play-animation", "main-play-step2"],
   step2InitProp = ["player", "bot"],
 
   playPickedCard = {
@@ -15,8 +15,8 @@ export const step1InitProp = ["paper", "scissors", "rock"],
     bot: undefined
   },
   
-  btnShadowHouse = "btn-shadow-house",
-  btnShadowFadeTime = 1500;
+  btnClassBotPicker = ["btn-bot-shadow"],
+  btnShadowFadeTime = 2300;
 
 
 export let target = document.querySelector(".play");

@@ -16,7 +16,6 @@ function step1(ect, cpb) {
       playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cpb) => step2(cpb));
 
     cpb = playBtn2.init;
-    cpb.bot.classList.add(c.btnShadowHouse);
 
     c.playPickedCard.player = card.cardAdder(
         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
@@ -26,7 +25,9 @@ function step1(ect, cpb) {
         common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
         cpb.bot
         );
-    // c.playPickedCard.bot.classList.toggle("btn-shadow-house");
+    cpb.player.setAttribute("picker", "player");
+    cpb.bot.setAttribute("picker", "bot");
+    cpb.bot.classList.add(...c.btnClassBotPicker);
 
   const promise = new Promise((resolve, reject) => {
       playHandler.btnContainerUpdater(c.target, c.step2ContainerClass, c.playPickedCard, true);
