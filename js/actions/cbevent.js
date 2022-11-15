@@ -25,8 +25,8 @@ function step1(ect, cpb) {
         common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
         cpb.bot
         );
-    cpb.player.setAttribute("picker", "player");
-    cpb.bot.setAttribute("picker", "bot");
+    //cpb.player.setAttribute("picker", "player");
+    //cpb.bot.setAttribute("picker", "bot");
     cpb.bot.classList.add(...c.btnClassBotPicker);
 
   const promise = new Promise((resolve, reject) => {

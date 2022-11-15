@@ -95,6 +95,6 @@
     }
 }
 
-@mixin animate($animation, $duration, $method, $iter) {
+@mixin animate($animation, $duration, $method, $iter: 1) {
   animation: $animation $duration $method $iter; //watch out for commas;
 }

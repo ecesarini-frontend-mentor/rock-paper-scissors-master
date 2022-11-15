@@ -61,5 +61,5 @@
       transform: rotateZ(0);
     }
   }
-  @include animate(wiggle, 0.2s, ease-in-out, 1);
+  @include animate(wiggle, 1s, ease-in-out, 1);
 }

@@ -1,6 +1,6 @@
 export function elementCreator(ty, con, clArr = false) {
   const elem = document.createElement(ty);
-  if(clArr && Array.isArray(clArr)) elem.classList.add(...clArr);
+  if (clArr && Array.isArray(clArr)) elem.classList.add(...clArr);
   elem.innerText = con;
   return elem;
 }
@@ -30,6 +30,15 @@ export function btnPlayPicker(ect, obj, clArr) {
     ) => (item += ` main-play-row2 button-${picked[ind]}`)
   );
   return clArr;
+}
+
+export function btnBotOverlay(inner, cl, attr) {
+  const bbo = document.createElement("div");
+
+  bbo.classList.add(...cl);
+  inner.setAttribute(attr[0], attr[1]);
+  bbo.append(inner);
+  return bbo;
 }
 
 export function callbackAttacher(obj, callback) {

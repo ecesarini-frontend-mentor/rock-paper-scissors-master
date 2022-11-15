@@ -534,7 +534,7 @@ body {
 }
 
 .main-play-animation {
-  animation: wiggle 0.2s ease-in-out 1;
+  animation: wiggle 1s ease-in-out 1;
 }
 @keyframes wiggle {
   0%, 7% {
@@ -609,13 +609,36 @@ body {
 }
 
 button.btn-bot-shadow {
+  position: relative;
   background-color: hsla(0deg, 0%, 0%, 0.2);
   background-image: unset;
   border: none;
   box-shadow: none;
 }
 
-@keyframes pickerRotation {}
+button[picker=bot] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  animation: botPickerExpander 1s ease-in 1;
+}
+@keyframes botPickerExpander {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(25%);
+  }
+  50% {
+    transform: scale(50%);
+  }
+  75% {
+    transform: scale(75%);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
 
 .card {
   display: flex;
