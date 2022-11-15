@@ -16,6 +16,7 @@ function step1(ect, cpb) {
       playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cpb) => step2(cpb));
 
     cpb = playBtn2.init;
+    cpb.bot = common.btnBotOverlay(cpb.bot, c.btnClassBotPicker, ["picker", "bot"]);
 
     c.playPickedCard.player = card.cardAdder(
         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
