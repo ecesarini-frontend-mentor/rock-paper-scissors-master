@@ -1,5 +1,27 @@
 import * as playHandler from "../actions/playhandler.js";
 
+//const step1 = ()=>alert("ciao");
+
+export const initContainer = {
+  containerClass: ["main-play-container", "main-play-step1"],
+  buttonClass: [
+    "main-play-row1 button-paper",
+    "main-play-row1 button-scissors",
+    "main-play-row2 button-rock"
+  ],
+  buttonAttribute: [
+    "paper",
+    "scissors",
+    "rock"
+  ],
+  // buttonCallback: [
+  //   ["click", step1],
+  //   ["click", step1],
+  //   ["click", step1]
+  // ]
+}
+
+
 export const step1InitProp = ["paper", "scissors", "rock"],
   step1InitClass = [
     "main-play-row1 button-paper",
