@@ -1,17 +1,22 @@
 import * as common from "/js/common/common.js";
 //import * as playHandler from "/js/actions/playhandler.js";
 import * as card from "/js/components/card.js";
-import * as cbEvent from "/js/actions/cbevent.js";
+import * as cbe from "/js/actions/cbevent.js";
 import * as c from "./common/constant.js";
 import {InitGame} from "./common/initgame.js";
 
 function initPage() {
-  const sectionPlay = document.querySelector(".play");
-  const initPlay = new InitGame(c.initContainer);
-  const step1 = () => alert("ciao");
+const arrStep1 = ["click", ()=>alert("ciao belli!")],
+objCbStep1 = {
+    paper: arrStep1,
+    scissors: arrStep1,
+    rock: arrStep1,
+  };
+  
+  const initPlay = new InitGame(c.playInit);
+  initPlay.addCallback(objCbStep1);
 
-  sectionPlay.append(initPlay.getContainer);
-  initPlay.addCallback(["click", step1]);
+  c.sectionPlay.append(initPlay.getContainer);
 }
 
 initPage();

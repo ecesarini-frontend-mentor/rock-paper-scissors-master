@@ -11,6 +11,13 @@ export function cbHandler(ect, cpb) {
     // .then(r => r);
 }
 
+export function step1Test(e, cpb) {
+  let ect = e.currentTarget;
+  alert(cpb);
+  //console.log(e.currentTarget);
+
+}
+
 function step1(ect, cpb) {
     const step2InitClass = common.playPicker(ect, cpb, "main-play-row2"),
       playBtn2 = new playHandler.BtnPlay(c.step2InitProp, step2InitClass, (cpb) => step2(cpb));

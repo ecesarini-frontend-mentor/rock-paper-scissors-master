@@ -1,15 +1,20 @@
-import * as btn from "/js/components/button.js";
+import { InitGame } from "./initgame.js";
 
-export class InitGame {
+export class ShowGame extends InitGame {
   constructor(obj) {
+    super(
+      this.obj,
+      this._btnMap,
+      this._container  
+    )
     this.obj = obj;
     this._btnMap = this.btnMap();
     this._container = this.makeContainer();
   }
 
-  get getContainer() {
-    return this._container;
-  }
+  // get getContainer() {
+  //   return this._container;
+  // }
 
   btnMap() {
     const btnMap = new Map(),
@@ -36,19 +41,4 @@ export class InitGame {
 
     return container;
   }
-
-  addCallback(obj) {
-    //debugger;
-    for(let p in obj) {
-      const elem = this._btnMap.get(p);
-      elem.addEventListener(obj[p][0], obj[p][1]);
-      this._btnMap.set(p, elem);
-    }
-    // this._btnMap.forEach((elm, ind) => {
-    //   const attr = elm.getAttribute(arg[ind]);
-    // });
-      // arg.forEach(())
-  }
-
-
 }
