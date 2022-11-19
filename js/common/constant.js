@@ -6,7 +6,10 @@ export const sectionPlay = document.querySelector(".play"),
       "main-play-row1 button-sec-play",
       "main-play-row2 button-sec-play",
     ],
-    buttonAttribute: ["paper", "scissors", "rock"],
+    buttonAttribute: {
+      move: ["paper", "scissors", "rock"],
+      test: ["test-paper", "test-scissors", "test-rock"]
+    }
   };
 
 

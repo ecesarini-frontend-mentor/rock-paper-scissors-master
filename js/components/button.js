@@ -6,8 +6,9 @@ export function buttonBuild(btnClass, btnAttr, btnCb) {
       btn.classList.add(...btnClass.split(" "));
     }
     if(btnAttr) { 
-      btn.setAttribute("move", btnAttr);
-      //btn.setAttribute(btnAttr[0], btnAttr[1]);
+      btnAttr.forEach(elm => {
+        btn.setAttribute(elm[0], elm[1]);
+      });
     }
 		if(btnCb) {
       btn.addEventListener(btnCb[0], btnCb[1]);

@@ -18,16 +18,21 @@ export class InitGame {
     const btnMap = new Map(),
       buttonClass = this.obj["buttonClass"],
       buttonAttribute = this.obj["buttonAttribute"];
-
+    let buttonAttributeArr = [];
+    
     buttonClass.forEach((foo, ind) => {
+      let baa = [];
+      for(let p in buttonAttribute) {
+        baa.push([p, buttonAttribute[p][ind]]);
+      }
+      buttonAttributeArr[ind] = baa;
+      //debugger;
       const currentBtn = btn.buttonBuild(
         buttonClass[ind],
-        buttonAttribute[ind]
+        buttonAttributeArr[ind]
       );
-      btnMap.set(buttonAttribute[ind], currentBtn);
+      btnMap.set(buttonAttribute.move[ind], currentBtn);
     });
-    //buttonAttribute.forEach
-      // btnMap.set(buttonAttribute[ind], currentBtn);
     return btnMap;
   }
 
