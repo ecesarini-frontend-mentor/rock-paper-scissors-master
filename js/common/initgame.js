@@ -7,6 +7,9 @@ export class InitGame {
     this._container = this.makeContainer();
   }
 
+  get getMap() {
+    return this._btnMap;
+  }
   get getContainer() {
     return this._container;
   }
@@ -23,6 +26,8 @@ export class InitGame {
       );
       btnMap.set(buttonAttribute[ind], currentBtn);
     });
+    //buttonAttribute.forEach
+      // btnMap.set(buttonAttribute[ind], currentBtn);
     return btnMap;
   }
 

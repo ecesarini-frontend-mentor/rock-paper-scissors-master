@@ -2,9 +2,9 @@ export const sectionPlay = document.querySelector(".play"),
   playInit = {
     containerClass: ["main-play-container", "main-play-step1"],
     buttonClass: [
-      "main-play-row1 button-paper",
-      "main-play-row1 button-scissors",
-      "main-play-row2 button-rock",
+      "main-play-row1 button-sec-play",
+      "main-play-row1 button-sec-play",
+      "main-play-row2 button-sec-play",
     ],
     buttonAttribute: ["paper", "scissors", "rock"],
   };
@@ -31,9 +31,9 @@ export const sectionPlay = document.querySelector(".play"),
 
 // export const step1InitProp = ["paper", "scissors", "rock"],
 //   step1InitClass = [
-//     "main-play-row1 button-paper",
-//     "main-play-row1 button-scissors",
-//     "main-play-row2 button-rock",
+//     "main-play-row1 button-sec-play",
+//     "main-play-row1 button-sec-play",
+//     "main-play-row2 button-sec-play",
 //   ],
 //   step1ContainerClass = ["main-play-container", "main-play-step1"],
 //   step2ContainerClass = [

@@ -4,19 +4,24 @@ import * as card from "/js/components/card.js";
 import * as cbe from "/js/actions/cbevent.js";
 import * as c from "./common/constant.js";
 import { InitGame } from "./common/initgame.js";
+import * as prom from "./actions/promise.js";
 
 function initPage() {
-  const arrStep1 = ["click", () => alert("ciao belli!")],
-    objCbStep1 = {
+  //const arrStep1 = ["click", () => alert("ciao belli!")],
+  //const arrStep1 = ["click", () => {debugger;}],
+
+  const initGame = new InitGame(c.playInit);
+
+  c.sectionPlay.append(initGame.getContainer);
+  
+  const buttonMap = initGame.getMap;
+  const arrStep1 = ["click", (e) => prom.btnPickedEvent(e, buttonMap)];
+  const objCbStep1 = {
       paper: arrStep1,
       scissors: arrStep1,
       rock: arrStep1,
     };
-
-  const initPlay = new InitGame(c.playInit);
-  initPlay.addCallback(objCbStep1);
-
-  c.sectionPlay.append(initPlay.getContainer);
+  //initGame.addCallback(objCbStep1);
 }
 
 initPage();
