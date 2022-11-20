@@ -21,7 +21,7 @@ function initPage() {
       scissors: arrStep1,
       rock: arrStep1,
     };
-  //initGame.addCallback(objCbStep1);
+  initGame.addCallback(objCbStep1);
 }
 
 initPage();

@@ -13,6 +13,8 @@ export function proHandler(f, ...arg) {
 export function btnPickedEvent(event, bMap) {
 
   let ect = event.currentTarget;
+  common.playPicker(ect, bMap);
+  //debugger;
   let cObj = {
     containerClass: ["main-play-container", "main-play-step2"],
     buttonClass: [
@@ -23,7 +25,6 @@ export function btnPickedEvent(event, bMap) {
   }
     //playerAttr = bMap.get
 
-  debugger;
   // return new Promise((resolve, reject) => {
   //   alert(ect)
   //   resolve();

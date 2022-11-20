@@ -8,7 +8,7 @@ export const sectionPlay = document.querySelector(".play"),
     ],
     buttonAttribute: {
       move: ["paper", "scissors", "rock"],
-      test: ["test-paper", "test-scissors", "test-rock"]
+      //test: ["test-paper", "test-scissors", "test-rock"]
     }
   };
 

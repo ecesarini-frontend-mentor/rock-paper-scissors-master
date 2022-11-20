@@ -9,6 +9,14 @@ export function randomPick(num) {
   return Math.floor(Math.random() * num);
 }
 
+export function playPicker(ect, bMap) {
+  const player = ect.getAttribute("move");
+  
+  debugger;
+}
+
+
+/*
 export function playPicker(ect, obj, sub) {
   const picked = [
     Object.keys(obj).find((key) => obj[key] === ect),
@@ -46,3 +54,4 @@ export function callbackAttacher(obj, callback) {
     obj[prop].addEventListener("click", callback);
   }
 }
+*/
