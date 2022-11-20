@@ -10,8 +10,18 @@ export const sectionPlay = document.querySelector(".play"),
       move: ["paper", "scissors", "rock"],
       //test: ["test-paper", "test-scissors", "test-rock"]
     }
-  };
+  },  
+  moveAttr = "move",
+  pickerAttr = ["picker", ["player", "bot"]],
 
+  pickerObj = {
+    containerClass: ["main-play-container", "main-play-step2"],
+    buttonClass: [
+      "main-play-row2 button-sec-play",
+      "main-play-row2 button-sec-play",
+    ],
+    buttonAttribute: { }
+  }  
 
 
 

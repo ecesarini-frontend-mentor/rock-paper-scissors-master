@@ -9,10 +9,13 @@ export function randomPick(num) {
   return Math.floor(Math.random() * num);
 }
 
-export function playPicker(ect, bMap) {
-  const player = ect.getAttribute("move");
+export function playPicker(attr, ect, bMap) {
+  const player = ect.getAttribute(attr),
+    mapProp = Array.from(bMap.keys());
+    return [player, mapProp[randomPick(3)]];  
+    //return {player: player, bot: mapProp[randomPick(3)]};
   
-  debugger;
+  //debugger;
 }
 
 
