@@ -26,7 +26,9 @@ export function btnPickedEvent(event, bMap) {
 
   //const playGame = new InitGame(c.pickerObj);
   const playGame = new ShowGame(c.pickerObj);
-  playGame.getMap;
+  debugger;
+  //c.sectionPlay.append(playGame.getContainer);
+  //playGame.getMap;
 
   //c.sectionPlay
 

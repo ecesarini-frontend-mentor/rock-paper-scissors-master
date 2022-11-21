@@ -5,6 +5,7 @@ export class InitGame {
     this.obj = obj;
     this._btnMap = this.btnMap();
     this._container = this.makeContainer();
+    //this._container = undefined;
   }
 
   get getMap() {
@@ -39,16 +40,17 @@ export class InitGame {
   makeContainer() {
     const container = document.createElement("div");
     container.classList.add(...this.obj["containerClass"]);
+    return this.mapContainer(container.cloneNode());
+  }
 
-    this._btnMap.forEach((elm) => {
-      container.append(elm);
+  mapContainer(container) {
+    this._btnMap.forEach(elem => {
+      container.append(elem);
     });
-
     return container;
   }
 
   addCallback(obj) {
-    //debugger;
     for(let p in obj) {
       const elem = this._btnMap.get(p);
       elem.addEventListener(obj[p][0], obj[p][1]);
