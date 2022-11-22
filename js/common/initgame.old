@@ -26,7 +26,7 @@ export class InitGame {
         btnArray.forEach(elm => container.append(elm));
         return container;
     }
-    get getContainer() {
+    get playContainer() {
         return this._container;
     }
 }

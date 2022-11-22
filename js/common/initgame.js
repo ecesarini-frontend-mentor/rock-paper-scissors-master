@@ -1,18 +1,28 @@
 import * as btn from "/js/components/button.js";
 
 export class InitGame {
+
   constructor(obj) {
     this.obj = obj;
+    // this._btnMap = this.btnMap();
+    // this._container = this.makeContainer();
     this._btnMap = this.btnMap();
-    this._container = this.makeContainer();
+    this._container = this.playContainer;
     //this._container = undefined;
   }
 
-  get getMap() {
-    return this._btnMap;
+  get playMap() {
+    this._btnMap = this.btnMap();
   }
-  get getContainer() {
-    return this._container;
+  set playMap(value) {
+    this._btnMap = value;
+  }
+
+  get playContainer() {
+    this._container = this.makeContainer();
+  }
+  set playContainer(value) {
+    this._container = value;
   }
 
   btnMap() {
@@ -35,12 +45,15 @@ export class InitGame {
       btnMap.set(buttonAttribute.move[ind], currentBtn);
     });
     return btnMap;
+    //this.playMap(btnMap);
   }
 
   makeContainer() {
     const container = document.createElement("div");
     container.classList.add(...this.obj["containerClass"]);
     return this.mapContainer(container.cloneNode());
+    //this.playContainer(this.mapContainer(container.cloneNode()));
+
   }
 
   mapContainer(container) {
@@ -51,6 +64,7 @@ export class InitGame {
   }
 
   addCallback(obj) {
+    const btnMap = this._btnMap
     for(let p in obj) {
       const elem = this._btnMap.get(p);
       elem.addEventListener(obj[p][0], obj[p][1]);

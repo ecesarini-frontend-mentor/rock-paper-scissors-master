@@ -3,19 +3,19 @@
 // -----------------------------------------------------------------------------
 
 .button-sec-play {
-  &[move~="paper"] {
+  &[move*="paper"] {
     @include button-play(
       "/images/icon-paper.svg",
       $button-play-shadow-paper $button-play-color-paper
     );
   }
-  &[move~="scissors"] {
+  &[move*="scissors"] {
     @include button-play(
       "/images/icon-scissors.svg",
       $button-play-shadow-scissors $button-play-color-scissors
     );
   }
-  &[move~="rock"] {
+  &[move*="rock"] {
     @include button-play(
       "/images/icon-rock.svg",
       $button-play-shadow-rock $button-play-color-rock

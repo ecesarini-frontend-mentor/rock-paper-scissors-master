@@ -25,10 +25,11 @@ export function btnPickedEvent(event, bMap) {
   c.pickerObj.buttonAttribute[c.pickerAttr[0]] = c.pickerAttr[1];
 
   //const playGame = new InitGame(c.pickerObj);
-  const playGame = new ShowGame(c.pickerObj);
+  const playGame = new ShowGame(c.pickerObj, c.cardPlayers);
+  c.sectionPlay.firstElementChild.replaceWith(playGame.playContainer);
   debugger;
-  //c.sectionPlay.append(playGame.getContainer);
-  //playGame.getMap;
+  //c.sectionPlay.append(playGame.playContainer);
+  //playGame.playMap;
 
   //c.sectionPlay
 

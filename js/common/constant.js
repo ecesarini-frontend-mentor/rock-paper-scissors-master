@@ -21,7 +21,11 @@ export const sectionPlay = document.querySelector(".play"),
       "main-play-row2 button-sec-play",
     ],
     buttonAttribute: { }
-  }  
+  },
+  cardPlayers = [
+    ["p", "You picked", "card-play"],
+    ["p", "The house Picked", "card-play"]
+  ];
 
 
 
