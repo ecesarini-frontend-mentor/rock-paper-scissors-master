@@ -15,7 +15,10 @@ function initPage() {
   c.sectionPlay.append(initGame.playContainer);
   
   const buttonMap = initGame.playMap;
-  const arrStep1 = ["click", (e) => prom.btnPickedEvent(e, buttonMap)];
+  const arrStep1 = [
+    "click", 
+    (e) => prom.btnPickedEvent(e, buttonMap)
+  ];
   const objCbStep1 = {
       paper: arrStep1,
       scissors: arrStep1,

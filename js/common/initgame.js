@@ -7,23 +7,25 @@ export class InitGame {
     // this._btnMap = this.btnMap();
     // this._container = this.makeContainer();
     this._btnMap = this.btnMap();
-    this._container = this.playContainer;
+    this._container = this.makeContainer();
     //this._container = undefined;
   }
 
   get playMap() {
-    this._btnMap = this.btnMap();
+    //this._btnMap = this.btnMap();
+    return this._btnMap;
   }
   set playMap(value) {
     this._btnMap = value;
   }
 
-  get playContainer() {
-    this._container = this.makeContainer();
-  }
-  set playContainer(value) {
-    this._container = value;
-  }
+  // get playContainer() {
+  //   //this._container = this.makeContainer();
+  //   return this._container;
+  // }
+  // set playContainer(value) {
+  //   this._container = value;
+  // }
 
   btnMap() {
     const btnMap = new Map(),

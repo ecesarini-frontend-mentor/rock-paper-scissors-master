@@ -25,9 +25,13 @@ export function btnPickedEvent(event, bMap) {
   c.pickerObj.buttonAttribute[c.pickerAttr[0]] = c.pickerAttr[1];
 
   //const playGame = new InitGame(c.pickerObj);
-  const playGame = new ShowGame(c.pickerObj, c.cardPlayers);
-  c.sectionPlay.firstElementChild.replaceWith(playGame.playContainer);
-  debugger;
+  return new Promise((resolve, reject) => {
+    const playGame = new ShowGame(c.pickerObj, c.cardPlayers);//.getCardArr;
+      //debugger;
+      c.sectionPlay.firstElementChild.replaceWith(playGame.playContainer);
+    });
+    resolve();
+  }
   //c.sectionPlay.append(playGame.playContainer);
   //playGame.playMap;
 
