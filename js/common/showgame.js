@@ -19,7 +19,14 @@ export class ShowGame extends InitGame {
 
     crd.forEach((elm, ind) => {
       const mapElem = this._btnMap.get(Array.from(this._btnMap.keys(k => k))[ind]);
-      container.append(card.cardAdder(elm, mapElem, this._cardArr[ind][2]));
+      const cA = card.cardAdder(elm, mapElem, this._cardArr[ind][2]);
+      const appender = (ind === 1)?
+        common.elementCreator("div", null, "card-adder-test").append(cA):
+        cA;
+
+      // debugger;
+      // container.append(card.cardAdder(elm, mapElem, this._cardArr[ind][2]));
+      container.append(appender);
     });
     return container;
   }
