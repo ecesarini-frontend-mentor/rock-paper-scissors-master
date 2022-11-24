@@ -4,28 +4,18 @@ export class InitGame {
 
   constructor(obj) {
     this.obj = obj;
-    // this._btnMap = this.btnMap();
-    // this._container = this.makeContainer();
-    this._btnMap = this.btnMap();
-    this._container = this.makeContainer();
-    //this._container = undefined;
+    this._btnMap;
+    this._container;
   }
 
   get playMap() {
-    //this._btnMap = this.btnMap();
+    this._btnMap = this.btnMap();
     return this._btnMap;
   }
-  set playMap(value) {
-    this._btnMap = value;
+  get playContainer() {
+    this._container = this.makeContainer();
+    return this._container;
   }
-
-  // get playContainer() {
-  //   //this._container = this.makeContainer();
-  //   return this._container;
-  // }
-  // set playContainer(value) {
-  //   this._container = value;
-  // }
 
   btnMap() {
     const btnMap = new Map(),

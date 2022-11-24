@@ -39,8 +39,8 @@ button.btn-bot-shadow {
 
 button[picker="bot"] {
 	position: absolute;
-	top: 50%;
-	left: 50%;
+	top: 38%;
+	left: 52%;
   @include keyframes(botPickerExpander) {
     0% {
       transform: scale(0);

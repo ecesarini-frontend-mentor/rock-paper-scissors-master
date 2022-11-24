@@ -8,7 +8,7 @@
 
 .main-play-step1 {
   @include background-img("/images/bg-triangle.svg", $section-play-img-dim);
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
   .main-play-row1 {
     grid-row: 1 / 2;

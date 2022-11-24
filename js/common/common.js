@@ -1,7 +1,7 @@
 export function elementCreator(ty, con, clArr = false) {
   const elem = document.createElement(ty);
   if (clArr && Array.isArray(clArr)) elem.classList.add(...clArr);
-  elem.innerText = con;
+  if(con) elem.innerText = con;
   return elem;
 }
 

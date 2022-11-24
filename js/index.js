@@ -11,10 +11,10 @@ function initPage() {
   //const arrStep1 = ["click", () => {debugger;}],
 
   const initGame = new InitGame(c.playInit);
+  const buttonMap = initGame.playMap;
 
   c.sectionPlay.append(initGame.playContainer);
   
-  const buttonMap = initGame.playMap;
   const arrStep1 = [
     "click", 
     (e) => prom.btnPickedEvent(e, buttonMap)
