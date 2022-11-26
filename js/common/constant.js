@@ -18,7 +18,7 @@ export const sectionPlay = document.querySelector(".play"),
     containerClass: ["main-play-container", "main-play-step2"],
     buttonClass: [
       "main-play-row2 button-sec-play",
-      "main-play-row2 button-sec-play",
+      "button-sec-play",
     ],
     buttonAttribute: { }
   },

@@ -25,11 +25,11 @@ function step1(ect, cpb) {
     cpb = playBtn2.init;
     cpb.bot = common.btnBotOverlay(cpb.bot, c.btnClassBotPicker, ["picker", "bot"]);
 
-    c.playPickedCard.player = card.cardAdder(
+    c.playPickedCard.player = card.cardBuild(
         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
         cpb.player
         );
-    c.playPickedCard.bot = card.cardAdder(
+    c.playPickedCard.bot = card.cardBuild(
         common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
         cpb.bot
         );
@@ -45,7 +45,7 @@ function step1(ect, cpb) {
 }
 
 function step2(cbp) {
-  c.playPickedCard.bot = card.cardAdder(
+  c.playPickedCard.bot = card.cardBuild(
       common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
       cpb.bot
       );

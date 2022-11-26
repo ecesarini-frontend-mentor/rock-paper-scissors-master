@@ -38,11 +38,11 @@ function initPage() {
 
   //       currentPlayBtn = playBtn2.init;
 
-  //       playPickedCard.player = card.cardAdder(
+  //       playPickedCard.player = card.cardBuild(
   //         common.elementCreator("p", "YOU PICKED", ["button-card-header-picked"]),
   //         currentPlayBtn.player
   //         );
-  //       playPickedCard.bot = card.cardAdder(
+  //       playPickedCard.bot = card.cardBuild(
   //         common.elementCreator("p", "THE HOUSE PICKED", ["button-card-header-picked"]),
   //         currentPlayBtn.bot
   //         );

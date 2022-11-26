@@ -379,7 +379,8 @@ body {
   font-weight: 700;
   line-height: 1em;
 }
-.card > * {
+.card p {
+  font-size: 1.3em;
   text-transform: uppercase;
 }
 
@@ -526,10 +527,10 @@ body {
 .main-play-step2 .card > * {
   margin-bottom: 2em;
 }
-.main-play-step2 .card:nth-child(1) {
+.main-play-step2 .card > p {
   grid-column: 1/2;
 }
-.main-play-step2 .card:nth-child(2) {
+.main-play-step2 .card > .main-play-row2 {
   grid-column: 2/3;
 }
 

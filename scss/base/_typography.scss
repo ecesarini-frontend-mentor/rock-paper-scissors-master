@@ -10,8 +10,9 @@ body {
 .card {
   font-weight: $text-font-weight-bold;
   line-height: 1em;
-  &>* {
-    text-transform: uppercase;
+  & p {
+    font-size: 1.3em;
+    text-transform: uppercase;    
   }
 }
 
