@@ -12,21 +12,21 @@ export class ShowGame extends InitGame {
   }
 
   mapContainer(container) {
-    debugger;
+    //debugger;
     const crd = this.cardArr.map(
-      elm => common.elementCreator(...elm)
+      elm => common.elementCreator(...elm.slice(0,3))
     );
     crd.forEach((elm, ind) => {
       let cA;
       const mapElem = this._btnMap.get(Array.from(this._btnMap.keys(k => k))[ind]);
       if(ind === 1) {
-        const cat = common.elementCreator("div", null, ["main-play-row2"]);
+        const cat = common.elementCreator("div", null, ["btn-bot-background"]);
         cat.append(mapElem);
         cA = cat;
       } else {
         cA = mapElem;
       }
-      let appender = card.cardBuild(elm, cA, this.cardArr[ind][2]);
+      let appender = card.cardBuild(elm, cA, this.cardArr[ind][3]);
       container.append(appender);
     });
     return container;

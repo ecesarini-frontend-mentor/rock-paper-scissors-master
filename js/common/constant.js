@@ -17,14 +17,14 @@ export const sectionPlay = document.querySelector(".play"),
   pickerObj = {
     containerClass: ["main-play-container", "main-play-step2"],
     buttonClass: [
-      "main-play-row2 button-sec-play",
+      "button-sec-play",
       "button-sec-play",
     ],
     buttonAttribute: { }
   },
   cardPlayers = [
-    ["p", "You picked", "card-play"],
-    ["p", "The house Picked", "card-play"]
+    ["p", "You picked", ["card-play-header", "card-play-header-player"], ["card-play", "card-play-player"]],
+    ["p", "The house picked", ["card-play-header", "card-play-header-bot"], ["card-play", "card-play-bot"]]
   ];
 
 

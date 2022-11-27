@@ -5,6 +5,25 @@
 }
 
 .card-play {
-    text-transform: uppercase;
+  text-transform: uppercase;
+  @include size(100%);
+  justify-content: flex-start;
+  &>*{
+    margin-bottom: 2em;
+  }
+  &.card-play-player {
+    grid-column: 1 / 2; 
+  }
+  &.card-play-bot { 
+    grid-column: 2 / 3; 
+    .btn-bot-background {
+      position: relative;
+      background-color: $button-play-shadow-inset;
+      background-image: unset;
+      border: none;
+      border-radius: 50%;
+      box-shadow: none;
+    }
+  }
 }
 
