@@ -47,8 +47,8 @@
 // }
 
 
-.main-play-animation {
-//.main-play-step2 {
+//.main-play-animation {
+.main-play-step2 {
   @include keyframes(wiggle) {  //wiggle: "dimenarsi"
     0%, 7% {
       transform: rotateZ(0);
@@ -72,5 +72,5 @@
       transform: rotateZ(0);
     }
   }
-  @include animate(wiggle, 1s, ease-in-out, 1);
+  @include animate(wiggle, 1s, ease-in-out, 0s, 1);
 }

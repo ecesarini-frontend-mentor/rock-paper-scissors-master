@@ -26,8 +26,13 @@ export function btnPickedEvent(event, bMap) {
   return new Promise((resolve, reject) => {
     const playGame = new ShowGame(c.pickerObj, c.cardPlayers);//.getCardArr;
     playGame.playMap;
-      //debugger;
-      c.sectionPlay.firstElementChild.replaceWith(playGame.playContainer);
+    const pg = playGame.playContainer;
+    setTimeout(()=> {
+      pg.querySelector(".button-sec-play[picker='bot']").style.visibility = "visible",
+      2000
+    });
+    debugger;
+    c.sectionPlay.firstElementChild.replaceWith(pg);
     });
     resolve();
 }

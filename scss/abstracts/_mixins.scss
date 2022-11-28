@@ -89,12 +89,11 @@
 
 /// Animation
 @mixin keyframes($name) {
-  //@debug #{$name};
   @keyframes #{$name} {
       @content;
     }
 }
 
-@mixin animate($animation, $duration, $method, $iter: 1) {
-  animation: $animation $duration $method $iter; //watch out for commas;
+@mixin animate($animation, $duration: 0s, $method: linear, $delay: 0s, $iter: 1) {
+  animation: $animation $duration $method $delay $iter; //watch out for commas;
 }

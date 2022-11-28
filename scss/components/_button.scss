@@ -29,17 +29,14 @@
   margin: $button-rules-margin;
 }
 
-button[picker="bot"] {
-  //visibility: hidden;
-	//position: absolute;
-	//top: 38%;
-	//left: 52%;
+.button-sec-play[picker="bot"] {
+  visibility: hidden;
   @include keyframes(botPicked) {
     0% {
       transform: scale(0);
     }
     25% {
-      transform: rotate(25deg) scale(25%);
+      transform: scale(25%);
     }
     50% {
       transform: scale(200%);
@@ -51,26 +48,8 @@ button[picker="bot"] {
 			transform: scale(100%);
 		}
   }
-  // @include keyframes(botPickedRotate) {
-  //   0% {
-  //     transform: rotate(0);
-  //   }
-  //   25% {
-  //     transform: rotate(25%);
-  //   }
-  //   50% {
-  //     transform: rotate(50%);
-  //   }		
-  //   75% {
-  //     transform: rotate(75%);
-  //   }
-	// 	100% {
-	// 		transform: rotate(100%);
-	// 	}
-  //}
 	@include animate(botPicked, 1s, ease-in-out);
-	//@include animate(botPickedRotate, 1s, linear);
-
+ //@include animate(fadeIn);
 }
 
 

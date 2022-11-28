@@ -25,6 +25,7 @@ function initPage() {
       rock: arrStep1,
     };
   initGame.addCallback(objCbStep1);
+
 }
 
 initPage();
